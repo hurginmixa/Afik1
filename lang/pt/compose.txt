@@ -1,0 +1,28 @@
+title = Compor Nova mensagem
+
+select_all_ico = Selecionar tudo
+no_attachment = Arquivos nao anexados
+view_file = Ver Arquivo
+open_folder = Abrir Pasta
+cnt_size = Tamanho
+
+
+bt_send_ico = Mandar Mensagem
+bt_address_ico = Catalogo de enderecos
+bt_upl_attach_ico = Carregar arquivo (s) usando browser
+bt_add_my_ftp_ico = Anexe seus arquivo(s)carregados
+bt_exit_ico = Sair
+bt_to_ico = Catalogo de enderecos
+bt_cc_ico = Catalogo de enderecos
+bt_return_mes_ico = Retornar a Mensagem
+bt_run_ftp_ico = Executar Ftp Cliente
+bt_add_attach = Adicionar anexos
+bt_rem_attach = Remover anexos
+
+lb_subject = Assunto
+lb_save_sent = Salvar mensagem em <i><u> Itens Remetidos </u></i> Pasta
+
+lb_file_name = Nome do Arquivo
+lb_date = Data e Hora
+lb_size = Tamanho
+

@@ -1,0 +1,39 @@
+title = Catalogo de enderecos
+
+chfolder = Selecionar Pasta
+
+lb_all = Tudo
+
+lb_to = Para
+lb_cc = CC
+lb_name = Nome
+lb_email = E-Mail
+lb_address = Endereco
+lb_phone = Telefone
+lb_cell = Celular
+
+err_int1 = Erro interno. Pasta nao encontrada.
+err_mes1 = Nome ou E-mail vazio.
+err_mes2 = Precisa selecionar usuarios para adicionar ao grupo ou pasta.
+err_mes3 = Grupo ou Pasta vazia
+err_mes4 = Impossivel encontrar Grupo ou Pasta
+err_mes5 = Novo Grupo ou Pasta ja existe
+err_mes6 = Grupo ou Pasta ja esta sendo usado
+
+bt_new_contact_ico = Criar novo Contato
+bt_del_contact_ico = Excluir Contato
+bt_new_message_ico = Criar nova Mensagem
+bt_new_folder_ico =  Insirir endereco para nova pasta
+bt_mov_folder_ico =  Adicionar ou Mover endereco para pasta
+bt_add_ico = Criar Lista de enderecos rapidos
+bt_submit_ico = Salvar modificacoes e Sair
+bt_cancel_ico = Sair sem salvar
+bt_ret_message = Retornar a Mensagem
+bt_exit_ico = Sair do Catalogo de endereco
+
+open_folder_ico = Abrir Pasta
+view_prop_ico = Ver propriedades do Endereco
+select_all_ico = Selecionar Tudo
+#---------new--------
+empty_list = Empty
+bt_step_up_ico = Step Up

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ln -sf ../error_access.php index.php
+
+
+find . -maxdepth 1 -not -name \.\* -and -not -type d -and -not -type l -exec chmod 664 {} \;
+chmod -f 775 *.sh
+chmod -f 775 *.pl
+chmod -f 775 .aftercvs
+
+
+ln -sf mailprog.pl mailprog
+
+ln -sf ../afik1.cf ./
+ln -sf ../ftp/db* ./
+ln -sf ../ftp/readconf.pm ./
+ln -sf ../ftp/utils.pm ./
+ln -sf ../ftp/tools.pm ./
+ln -sf ../ftp/sendmail.pm ./

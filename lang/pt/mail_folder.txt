@@ -1,0 +1,45 @@
+title = Caixa de entrada
+subtitle = Mensagem
+chfolder = Escolher Pasta
+attachment = Anexos
+files_ico = Arquivos
+attach_ico = Anexos
+select_all_ico = Selecionar tudo
+view_file_ico = Ver Arquivo
+un_read_mail_ico = Mensagens nao lidas
+read_mail_ico = Mensagens Lidas
+cnt_messages = Mensagem(ns)
+cnt_files = Arquivo (s)
+cnt_size = Tamanho
+
+bt_open_ico = Abrir Pasta selecionada
+bt_move_ico = Mover mensagem(ns) para pasta escolhida
+bt_delete_ico = Excluir mensagens selecionadas
+bt_reply_ico = Responder
+bt_forward_ico = Encaminhar
+bt_move_mes_ico = Mover mensagem para pasta escolhida
+bt_delete_mes_ico = Excluir mensagens selecionadas
+bt_copy_my_ftp_ico = Copiar arquivos selecionados para FTP / Meus arquivos
+bt_dwnl_zip_ico = Abaixar arquivo selecionado via zip
+
+
+lb_prev = Anterior
+lb_next = Proximo
+lb_from = De
+lb_to = Para
+lb_subject = Assunto
+lb_date = Data e Hora
+lb_size = Tamanho
+lb_file_name = Arquivo
+lb_type = Tipo
+
+fd_inbox = Caixa de Entrada
+fd_inbox_ico = Correio de entrada
+fd_sent = Itens Remetidos
+fd_sent_ico = Itens Remetidos
+fd_trash = Lixeira
+fd_trash_ico = Lixeira
+fd_other = Outro
+fd_other_ico = Outro
+
+

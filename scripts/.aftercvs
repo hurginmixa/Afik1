@@ -1,0 +1,8 @@
+#!/bin/bash
+
+find . -maxdepth 1 -not -name \.\* -and -not -type d -and -not -type l -exec chmod 664 {} \;
+ln -sf ../error_access.php index.php
+
+chmod -f +x *.pl
+chmod -f -x *.pm
+chmod -f +x *.sh

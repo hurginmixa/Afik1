@@ -1,0 +1,5 @@
+title = UPLOAD FILE(S)
+step1 = SELECT FILE(S)
+step2 = UPLOAD FILES
+file = FILE #
+err_subscript = Afik1 System Files & Folders Upload Server

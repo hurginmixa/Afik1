@@ -1,0 +1,17 @@
+sc_welcome= Menu Principal
+sc_welcome_ico = Menu Principal
+sc_inbox = Caixa de Entrada
+sc_inbox_ico = Correio de Entrada
+sc_compose = Nova Mensagem
+sc_compose_ico = Compor nova Mensagem
+sc_address = Catálogo de Endereco
+sc_address_ico = Catalogo de Endereco Pessoal
+sc_ftp_myfile = FTP / Meu Arquivo
+sc_ftp_myfile_ico = Arquivos Carregados
+sc_ftp_frfile = FTP / Arquivos de Amigos
+sc_ftp_frfile_ico = Acesso a amigos para carregar arquivo (s)
+sc_logout = Desconectar
+sc_logout_ico = Sair
+sc_username = Nome do Usuario
+
+

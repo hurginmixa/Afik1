@@ -1,0 +1,127 @@
+<?php
+/*
+#############################################################################
+# This file protected by extended attributes of ext2 filesystem 
+# to protect file run: chattr +i /usr/local/afik1/afik1.cf
+# to remove protection run: chattr -i /usr/local/afik1/afik1.cf
+# to view attributes run: lsattr /usr/local/afik1/afik1.cf
+#############################################################################
+
+##############################################################################
+# Globals Setings
+
+VERSION = 0.6.003.0001
+
+# Name of local computer
+LOCAL_SERVER = afik1.camtek.co.il
+# Name of local domain
+LOCAL_DOMAIN = $LOCAL_SERVER
+
+HTTP_USER      = apache
+ADMIN_USER     = admin
+
+ADMIN_EMAIL    = mixa@ntmix.com
+FEEDBACK_EMAIL = $ADMIN_EMAIL
+
+DEFAULT_USER_DISK_QUOTE = 10000000
+DEFAULT_DOMAIN_DISK_QUOTE = 10000000000
+
+
+##############################################################################
+# Location of files and folders
+
+PROGRAM_ROOT    = /usr/local/afik1
+PROGRAM_SRC     = $PROGRAM_ROOT/src
+PROGRAM_SCRIPTS = $PROGRAM_ROOT/scripts
+PROGRAM_IMG     = $PROGRAM_ROOT/img
+PROGRAM_FTP     = $PROGRAM_ROOT/ftp
+PROGRAM_POP3    = $PROGRAM_ROOT/pop3
+PROGRAM_CGI     = $PROGRAM_ROOT/cgi
+PROGRAM_SQL     = $PROGRAM_ROOT/sql
+PROGRAM_SMS     = $PROGRAM_ROOT/sms
+PROGRAM_ZIUD    = $PROGRAM_ROOT/ziud
+PROGRAM_HELP    = $PROGRAM_ROOT/help
+PROGRAM_LANG    = $PROGRAM_ROOT/lang
+PROGRAM_MISC    = $PROGRAM_ROOT/misc
+PROGRAM_C       = $PROGRAM_ROOT/c
+PROGRAM_SYSTEM  = $PROGRAM_ROOT/system
+PROGRAM_CRON    = $PROGRAM_ROOT
+
+PROGRAM_DB_PATH = /var/afik1
+PROGRAM_ARC     = $PROGRAM_DB_PATH/arc
+PROGRAM_FILES   = $PROGRAM_DB_PATH/files
+PROGRAM_LOG     = $PROGRAM_DB_PATH/log
+PROGRAM_TMP     = $PROGRAM_DB_PATH/tmp
+PROGRAM_PNUM    = $PROGRAM_DB_PATH/process_numbers
+
+
+##############################################################################
+# SQL Section
+
+DBASE = afik1
+
+POSTGRES_USER        = apache
+SQL_LogFileName      = $PROGRAM_ARC/sql_log.txt
+
+
+##############################################################################
+# INET Locations
+
+INET_ROOT = $PROTOCOL//$HTTP_HOST
+INET_SRC  = $INET_ROOT
+INET_IMG  = $INET_SRC/view_img.php
+#INET_IMG  = $INET_ROOT/img
+INET_CGI  = $PROTOCOL//$HTTP_HOST/cgi-afik1
+INET_HELP = $INET_ROOT/help
+
+
+##############################################################################
+# Web Server
+
+WEB_LogFileName      = $PROGRAM_LOG/web_log.txt
+
+
+##############################################################################
+# FTP Server
+
+#FTP_HOST = $HTTP_HOST
+FTP_HOST = afik1.camtek.co.il
+FTP_PORT = 21
+FTP_PORT_DATA = 20
+FTP_Program          = $PROGRAM_FTP/ftp.pl
+FTP_LogFileName      = $PROGRAM_LOG/ftp_log.txt
+FTP_ProcNumer        = $PROGRAM_PNUM/ftp_Process_Number
+
+
+##############################################################################
+# ESMTP Server
+
+ESMTP_PORT         = 25
+ESMTP_Program      = $PROGRAM_ESMTP/esmtp.pl
+ESMTP_LogFileName  = $PROGRAM_LOG/esmtp_log.txt
+ESMTP_ProcNumer    = $PROGRAM_PNUM/esmtp_Process_Number
+
+
+##############################################################################
+# POP3 Server
+
+POP3_PORT         = 110
+POP3_Program      = $PROGRAM_POP3/pop3.pl
+POP3_LogFileName  = $PROGRAM_LOG/pop3_log.txt
+POP3_ProcNumer    = $PROGRAM_PNUM/pop3_Process_Number
+
+
+##############################################################################
+# Check DataBase
+
+Check_DataBase_LogFileName =  $PROGRAM_LOG/check_database_log.txt
+CheckAdmin = $ADMIN_EMAIL
+
+##############################################################################
+# AdminReport
+
+ADMIN_RPT_SENDER = admin_report@$LOCAL_DOMAIN
+ADMIN_RPT_RECIVERS = $ADMIN_EMAIL
+
+*/
+?>

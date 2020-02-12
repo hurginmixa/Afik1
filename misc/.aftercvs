@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ln -sf ../error_access.php index.php
+
+chmod 775 *.pl
+chmod 664 *.pm
+chmod 775 *.sh
+
+ln -sf ../afik1.cf ./
+ln -sf ../ftp/db* ./
+ln -sf ../ftp/readconf.pm ./
+ln -sf ../ftp/utils.pm ./
+ln -sf ../ftp/tools.pm ./
+ln -sf ../ftp/sendmail.pm ./
+
+if [ -e /etc/redhat-release ]; then
+	ln -sf dbbackup.redhat.sh dbbackup.sh
+else
+	ln -sf dbbackup.other.sh dbbackup.sh
+fi

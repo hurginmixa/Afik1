@@ -1,0 +1,16 @@
+title = אפשרויות
+acc_info = פרטי החשבון
+password = סיסמה
+repassword = אימות סיסמה
+passw_mes = חייבת להכיל  לפחות (6)תווים, יכולה להכיל אותיות
+firstname = שם פרטי
+lastname = שם משפחה
+name_mes = שם פרטי ומשפחה יצורפו לכל מכתב שתשלח 
+email = (E-Mail)כתובת דוא"ל 
+frwmail = העבר מכתב באופן אוטומטי לכתובת
+address = כתובת
+country = ארץ
+phone = מספר טלפון
+mphone = מספר סלולארי
+fax = מספר פקס
+nicq = ICQ מספר 

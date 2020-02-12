@@ -1,0 +1,9 @@
+title = רשימת שפות
+lang = שפות
+scrn = מסך
+bt_select = בחר
+bt_select_ico = בחר בשפה או במסך
+bt_save = שמור שינוים
+bt_save_ico = שמור שינוים
+bt_exit = יציאה
+bt_exit_ico = יציאה 

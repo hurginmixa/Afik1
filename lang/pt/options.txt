@@ -1,0 +1,21 @@
+title     = Opç?es
+acc_info  = Informaç?o da conta de:
+
+password   = Senha
+repassword = Repetir a Senha
+passw_mes  = Minimo 6 Caracters, Alfanuméricos, sem espaços.
+
+firstname = Nome
+lastname  = Sobrenome
+name_mes  = Seu Nome Completo ser? enviado junto as mensagens enviadas
+
+email     = E-Mail
+frwmail   = Encaminhar Mail
+
+address   = Endereço
+country   = Pa?s
+
+phone     = Telefone
+mphone    = Telefone Celular
+fax       = Fax
+nicq      = Icq

@@ -1,0 +1,11 @@
+title = SEARCH FOR FILES & FOLDERS
+search_query = FILE OR FOLDER NAME FOR SEARCH
+case_sensitive = Case Sensitive
+empty = Empty
+name = Name
+size = Size
+date = Date
+up = Up
+attachFile = Attached File
+err_mes1 = FILE OR FOLDER NAME FOR SEARCH NOT GIVEN
+err_mes2 = INVALID CHARACTERS IN FILE OR FOLDER NAME FOR SEARCH

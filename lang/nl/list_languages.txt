@@ -1,0 +1,9 @@
+title = TAAL LIJST
+lang = Taal
+scrn = Scherm
+bt_select = Selekteer
+bt_select_ico = Selekteer Nieuwe Taal Of Scherm
+bt_save = Veranderingen Bewaren
+bt_save_ico = Bewaar Uw Veranderingen
+bt_exit = Eruit
+bt_exit_ico = Eruit - Naar Administrator Opties

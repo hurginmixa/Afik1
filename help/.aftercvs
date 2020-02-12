@@ -1,0 +1,10 @@
+#!/bin/bash
+
+find . -maxdepth 1 -not -name \.\* -and -not -type d -and -not -type l -exec chmod 664 {} \;
+find . -maxdepth 1 -not -name \.\* -type d -exec chmod 775 {} \;
+
+chmod +x $0
+
+ln -sf ../afik1.cf ./afik1.cf.php
+ln -sf ../error_access.php index.php
+ln -sf ../src/_config.inc.php ./

@@ -1,0 +1,9 @@
+title = LIST OF LANGUAGES
+lang = Language
+scrn = Screen
+bt_select = Select
+bt_select_ico = Select New Language List Or Screen
+bt_save = Save Changes
+bt_save_ico = Save Your Changes
+bt_exit = Exit
+bt_exit_ico = Exit To Administrator Options

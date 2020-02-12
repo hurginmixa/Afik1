@@ -1,0 +1,46 @@
+title = Главное меню
+
+tools = Инструменты
+to_options=Настройки
+to_options_ico= Ваши персональные настройки
+to_tools = Разное
+to_tools_ico = Разные инструменты
+to_admin = Администратор
+to_admin_ico = Администрация Вашей системы
+to_userguide = Инструкции
+to_userguide_ico = Инструкции пользователя
+to_about = О нас
+to_about_ico = О нас
+to_logout = Выход
+to_logout_ico = Выход из системы
+
+
+cl_folder = Папка
+cl_messages = Сообщения
+cl_new_messages = Новые сообщения
+cl_attach = Файлы
+cl_size = Размер
+
+fd_inbox = Входящая почта
+fd_inbox_ico = Входящая почта
+fd_sent = Посланные письма
+fd_sent_ico = Посланные письма
+fd_trash = Корзина
+fd_trash_ico = Удаленные письма
+fd_other = other
+fd_other_ico = Личная папка
+fd_ftp_myfile = FTP / Мои файлы
+fd_ftp_myfile_ico = Ваши загруженные файлы
+fd_ftp_frfile = FTP / Файлы друзей
+fd_ftp_frfile_ico = Загруженые файлы Ваших друзей
+fd_total = Всего
+
+bt_new_folder_ico = Нажмите для создания новой личной папки
+bt_ren_folder_ico = Нажмите для переименования существующей личной папки
+bt_del_folder_ico = Нажмите для удаления существующей личной папки
+
+errmes1 = Не задано новое имя
+errmes2 = Имя уже существует
+errmes3 = Не задана папка для переименования
+errmes4 = Длинное имя папки (15 максимум символов)
+errmes5 = Использован запрещеный символ в имени папки

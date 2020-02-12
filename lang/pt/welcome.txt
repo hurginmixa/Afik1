@@ -1,0 +1,46 @@
+title = Menu Principal
+
+tools = Ferramentas
+to_options= Opcoes
+to_options_ico= Modificar informacao de sua conta
+to_tools = Ferramentas
+to_tools_ico = Esvaziar lixeira
+to_admin = Administrador
+to_admin_ico = Administracao de seu systema
+to_userguide = Guia do usuario
+to_userguide_ico = Abaixar Arquivo-PDF guia do usuario
+to_about = Quem Somos
+to_about_ico = Quem somos
+to_logout = Desconectar
+to_logout_ico = Sair
+
+cl_folder = Pasta
+cl_messages = Mensagens
+cl_new_messages = Novas Mensagens
+cl_attach = Anexos e Arquivos
+cl_size = Tamanho
+
+fd_inbox = Caixa de Entrada
+fd_inbox_ico = Correio de Entrada
+fd_sent = Itens Remetidos
+fd_sent_ico = Itens Remetidos
+fd_trash = Lixeira
+fd_trash_ico = Lixeira
+fd_other = Outros
+fd_other_ico = Outros
+fd_ftp_myfile = FTP / Meus Arquivos
+fd_ftp_myfile_ico = Arquivos Carregados
+fd_ftp_frfile = FTP / Arquivos dos Amigos
+fd_ftp_frfile_ico = Acesso aos arquivos de amigos carregados
+fd_total = Total
+
+bt_new_folder_ico = Clicar para Criar Nova Pasta Personalizada
+bt_ren_folder_ico = Clicar para Renomear Pasta Personalizada
+bt_del_folder_ico = Clicar para excluir Pasta Personalizada
+
+errmes1 = nome nao Citado
+errmes2 = Nome ja em Uso
+errmes3 = Pasta para renomear nao citada
+errmes4 = Nome de Pasta muito longo (maximo 15 caracteres)
+errmes5 = Simbolos ilegais no nome da Pasta
+

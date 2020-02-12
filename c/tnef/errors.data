@@ -1,0 +1,12 @@
+# errors.data - list errors returned from routs tnef.c (TNEF_HasError)
+# sym                          num     mes
+
+errNoError                    0x0000  No Error
+errNoTNEFFile                 0x0001  Error : No TNEF File
+errUnexpEndFile               0x0002  Error : Invalid Read. Unexpected end of input
+errInvalidWrite               0x0003  Error : Invalid Write.
+errMallocMem                  0x0004  Error : Allocation Memory
+errInvalidParameter           0x0005  Error : Invalid Parameter
+errInvalidAttributType        0x0006  Error : Invalid Attribute Type
+errInvOpenFile                0x0007  Error : Invalid Open file
+errInvalidAttributNumer       0x0008  Error : Invalid Attribut Numer

@@ -1,0 +1,30 @@
+title = Pasta de Amigos
+home_title = FTP / Arquivos de Amigos 
+home_name = Friends_FTP
+step_to = Progredir para
+Numbers   N?meros
+select_all_ico = Seletar todos os Arquivos
+remark_ico = Remarcar
+step_up_ico = Adiantar
+bt_sel_friends = Mostrar todos os o Amigos
+bt_sel_friends_ico = Mostrar Arquivos Ou Pastas de todos os Amigos
+open_folder_ico = Abrir Pasta
+view_file_ico = Ver Arquivo
+
+bt_paste_ico = Colar Arquivos do Quadro de Ediç?o
+bt_cut_ico = Cortar Arquivos Seletados para Quadro de Ediç?o
+bt_copy_ico = Copar Arquivos Seletados para Quadro de Ediç?o
+bt_delete_ico = Deletar Arquivos seletados
+
+cnt_files = Arquivo(s)
+cnt_size = Tamanho
+
+lb_file_name = Nome de Arquivo
+lb_date = Data
+lb_size = Tamanho
+lb_owner = Propriet?rio
+bt_dwnl_zip_ico = Abaixar Arquivos seletados via Zip 
+bt_upld_brw_ico = Carregar Arquivos via navegador
+bt_run_ftp_ico = Execute FTP Cliente
+bt_cancel_ico = cancelar
+

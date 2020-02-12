@@ -1,0 +1,29 @@
+
+
+
+
+===========
+0=>mixa<@afik1.sal-chronus.co.il.
+1=
+===========
+parametrs: user : 'mixa' domain : 'afik1.sal-chronus.co.il' pwd : '/usr/local/afik1/mail' mailers UID : '115' mailers GID : '104 104'
+frwmail :
+command line: | /usr/local/afik1/c/parsemail --stdin --domain=afik1.sal-chronus.co.il --dbase=afik1 -dbuser=afik1 --filedir=/var/afik1_storage/files --tmpdir=/var/afik1_storage/tmp --debug mixa 1>>/var/afik1_storage/log/mixa@afik1.sal-chronus.co.il.debug
+Return-Path: <System_messager@afik1.sal-chronus.co.il>
+Received: (from apache@localhost)
+	by mail.sal-chronus.co.il (8.13.1/8.13.1) id i99Cd190021070;
+	Sat, 9 Oct 2004 12:39:01 GMT
+Date: Sat, 9 Oct 2004 12:39:01 GMT
+Message-Id: <200410091239.i99Cd190021070@mail.sal-chronus.co.il>
+X-Authentication-Warning: mail.sal-chronus.co.il: apache set sender to System_messager@afik1.sal-chronus.co.il using -f
+To: mixa@afik1.sal-chronus.co.il
+Subject: User download file(s) GuestOf.mixa@afik1.sal-chronus.co.il
+Content-Type: Text/PLAIN
+From: System_messager@afik1.sal-chronus.co.il
+Reply-To: System_messager@afik1.sal-chronus.co.il
+X-Afik1-Access-Notification: on
+
+
+User GuestOf.mixa@afik1.sal-chronus.co.il at Sat,  9 Oct 2004 12:39:01 +0000 download file
+/php.exe
+-end-parser-with errorcode '1'

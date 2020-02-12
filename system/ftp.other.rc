@@ -1,0 +1,161 @@
+#! /bin/bash
+#
+# chkconfig: 345 99 00
+# description: start and stop Afik1 FTP services
+#
+#
+
+
+. /usr/share/afik1/read_config.sh
+
+# This will prevent initlog from swallowing up a pass-phrase prompt if
+# mod_ssl needs a pass-phrase from the user.
+INITLOG_ARGS=""
+
+
+procnum() {
+  if [ ! -f ${FTP_ProcNumer} ]; then
+    pid=
+    return 1
+  fi
+
+  pid=`cat $FTP_ProcNumer`
+
+  return 0
+}
+
+checkpid() {
+	local i
+
+	for i in $* ; do
+		[ -d "/proc/$i" ] || return 1
+	done
+	return 0
+}
+
+
+prog="Afik1 FTP"
+
+
+start() {
+        echo -n "Starting $prog: "
+
+	if [ "`whoami`" != "root" ]; then
+           failure "$prog: Run by user root only - "
+           echo
+           return 1
+        fi
+
+
+        readconfig
+        RETVAL=$?
+        if [ $RETVAL != 0 ]; then
+           failure "$prog: Error read config - "
+           echo
+           return $RETVAL
+        fi
+
+        procnum
+        RETVAL=$?
+        if [ $RETVAL == 0 ]; then
+           checkpid $pid
+           RETVAL=$?
+           if [ $RETVAL == 0 ]; then
+             echo "$prog: already runing - "
+             echo
+             return 1
+           fi
+        fi
+
+        daemon $FTP_Program
+        RETVAL=$?
+        echo
+        return $RETVAL
+}
+
+stop() {
+	echo -n $"Stopping $prog: "
+
+        if [ "`whoami`" != "root" ]; then
+	       echo "$prog: Run by user root only - "
+           echo
+           return 1
+        fi
+
+        readconfig
+        RETVAL=$?
+        if [ $RETVAL != 0 ]; then
+           failure "$prog: Error read config - "
+           echo
+           return $RETVAL
+        fi
+
+        procnum
+        RETVAL=$?
+        if [ $RETVAL != 0 ]; then
+          failure "$prog: lock file not found - "
+          echo
+          return $RETVAL
+        fi
+
+        checkpid $pid
+        RETVAL=$?
+        if [ $RETVAL != 0 ]; then
+          failure "$prog: not runing - "
+          echo
+          return $RETVAL
+        fi
+
+
+        killproc $FTP_Program
+        echo 
+	return $RETVAL
+}	
+
+rhstatus() {
+        readconfig
+        RETVAL=$?
+        if [ $RETVAL != 0 ]; then
+           failure "$prog: Error read config - "
+           echo
+           return $RETVAL
+        fi
+
+	status $FTP_Program
+}	
+
+restart() {
+  	stop
+	start
+}	
+
+reload() {
+        stop
+        start
+}
+
+case "$1" in
+  start)
+  	start
+	;;
+  stop)
+  	stop
+	;;
+  restart)
+  	restart
+	;;
+  reload)
+  	reload
+	;;
+  status)
+  	rhstatus
+	;;
+  condrestart)
+  	[ -f /var/lock/subsys/crond ] && restart || :
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|status|reload|restart|condrestart}"
+	exit 1
+esac
+
+exit $?

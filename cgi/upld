@@ -1,0 +1,377 @@
+#!/usr/bin/perl
+
+use tools;
+use db_pg;
+use sendmail;
+use ParseHTTPPost;
+
+
+#use File::Copy;
+
+#use Fcntl;
+
+use readconf;
+
+#$main::PROGRAM_ROOT  = "/var/afik1";
+#$main::PROGRAM_SRC   = "$main::PROGRAM_ROOT/src";
+#$main::PROGRAM_FILES = "$main::PROGRAM_ROOT/files";
+#$main::PROGRAM_SMS   = "$main::PROGRAM_ROOT/sms";
+#$main::PROGRAM_ZIUD  = "$main::PROGRAM_ROOT/ziud";
+#$main::PROGRAM_CGI   = "$main::PROGRAM_ROOT/cgi";
+
+#$main::HTTP_HOST = ($ENV{HTTP_HOST} ne "") ? $ENV{HTTP_HOST} : $ENV{HOSTNAME};
+#$main::INET_ROOT = "http://$main::HTTP_HOST/proj4";
+#$main::INET_SRC  = "$main::INET_ROOT/src";
+#$main::INET_IMG  = "$main::INET_ROOT/img";
+#$main::INET_CGI  = "http://$main::HTTP_HOST/cgi-afik1";
+
+$main::BufferSize = 1024 * 1024;
+
+
+#############################################################################
+
+
+sub main()
+{
+
+  # Znachenija $rez
+  # 0 - prirazbore formy byla naidena oshibka;
+  # 1 - pri razbore ne bylo oshibok;
+  # 2 - nebylo razbora, pervyi wchod
+  #-------------------------------------------
+  $rez = 2;
+  if ($ENV{'REQUEST_METHOD'} eq "POST") {
+    $rez = ParseHTTPPost::Parse();
+    if (!$rez) {
+    } else {
+      for ($i = 0; $i <= $#ParseHTTPPost::Vars; $i++) {
+        $f = $ParseHTTPPost::Vars[$i];
+
+        if ($f->{Name} eq "Flag") {
+          $Flag = ReadFile($f->{Tmp_File_Name});
+          #Debug($Flag);
+          Do_List()  if ($Flag eq "List");
+          Do_Files() if ($Flag eq "Files");
+
+          #print "Content-type: Text/HTML\r\n\r\n";
+          #print "0=0\n";
+
+          last;
+        }
+      }
+
+      for ($i = 0; $i <= $#ParseHTTPPost::Vars; $i++) {
+        $f = $ParseHTTPPost::Vars[$i];
+        unlink($f->{Tmp_File_Name}) if ($f->{Tmp_File_Name} ne "");
+      }
+
+    }
+  }
+}
+
+
+##############################################################################
+
+
+sub Do_List()
+{
+
+  DBConnect($main::DBASE);
+
+  my($k) = 0;
+
+  print "Content-type: Text/HTML\r\n\r\n";
+  for ($i = 0; $i <= $#ParseHTTPPost::Vars; $i++) {
+     $f = $ParseHTTPPost::Vars[$i];
+     next if ($f->{Name} ne "List[]");
+
+     $crc = ReadFile($f->{Tmp_File_Name});
+     print STDERR "$0 $$ Do_List : $crc\n";
+
+     $size = substr($crc, 32);
+     $crc = substr($crc, 0, 32);
+
+
+     $res = DBExec("select * from file where fcrc = '$crc' and fsize = '$size'");
+     if ($res->NumRows() != 0) {
+       print "$k=" . $res->Value("sysnum") . "\n";
+     } else {
+       print "$k=0\n";
+     }
+     $k++;
+  }
+  #print "Complete\n";
+
+  print STDERR "$0 $$ Do_List compleet\n";
+}
+
+
+###############################################################################
+
+
+sub Do_Files()
+{
+  my ($UID, $FS, $VER) = ("", "", "");
+  my ($USERNAME, $OWNER);
+  my ($i, $f);
+
+  DBConnect($main::DBASE);
+
+
+  print "Content-type: Text/HTML\r\n\r\n";
+  for ($i = 0; $i <= $#ParseHTTPPost::Vars; $i++) {
+     $f = $ParseHTTPPost::Vars[$i];
+
+     $UID = ReadFile($f->{Tmp_File_Name})                                if ($f->{Name} eq "UID");
+     $FS  = ReadFile($f->{Tmp_File_Name})                                if ($f->{Name} eq "FS");
+     $VER = ReadFile($f->{Tmp_File_Name})                                if ($f->{Name} eq "VER");
+     $files[$#files + 1] = $f                                            if ($f->{Name} eq "files\[\]");
+
+     $files_content[$#files_content + 1] = ReadFile($f->{Tmp_File_Name}) if ($f->{Name} eq "files_content\[\]");
+     $putfiles{$1} = ReadFile($f->{Tmp_File_Name})                       if ($f->{Name} =~ /^PutFiles\[(.*)\]$/i);
+  }
+
+
+  if ($UID eq "") {
+    return;
+  }
+
+  print STDERR "$0 $$ UID '$UID' FS '$FS'\n";
+
+  if ($UID =~ /^[0-9]*$/) {
+    $r_usr = DBExec("select usr.name as usrname, domain.name as domainname from usr, domain where domain.sysnum = usr.sysnumdomain and usr.sysnum = $UID");
+    if ($r_usr->NumRows() == 0) {
+      return;
+    }
+    $USERNAME = $r_usr->Value("usrname") . "\@". $r_usr->Value("domainname");
+
+    if($FS == 0) {
+      $OWNER = $UID;
+    } else {
+      $r_fs = DBExec("select * from fs where fs.sysnum = $FS");
+      if ($r_fs->NumRows() == 0 || $r_fs->Value("sysnumfile") != 0) {
+        return;
+      }
+      $OWNER = $r_fs->Value("owner");
+      if ($OWNER != $UID) {
+        if(!CheckLink($r_fs, $FS, $USERNAME)) {
+          return;
+        }
+      }
+    }
+  } else {
+    if ($FS == 0) {
+      return;
+    }
+
+    $USERNAME = $UID;
+
+    $r_fs = DBExec("select * from fs where fs.sysnum = $FS");
+    if ($r_fs->NumRows() == 0 || $r_fs->Value("sysnumfile") != 0) {
+        return;
+    }
+    $OWNER = $r_fs->Value("owner");
+    if(!CheckLink($r_fs, $FS, $USERNAME)) {
+       return;
+    }
+  }
+
+
+  my($name, $num);
+  while (($name, $num) = each(%putfiles)) {
+    print STDERR "$0 $$ Do_file putfiles $name $num\n";
+    $name = $1 if ($name =~ /\\([^\\]*)$/);
+    PutFile($FS, $name, $num, $OWNER);
+  }
+
+  for ($i=0; $i <= $#files; $i++) {
+    $f = $files[$i];
+
+    if ($f->{MD5} eq "") {
+      $f->{MD5} = substr(`md5sum $f->{Tmp_File_Name}`, 0, 32);
+    }
+
+    print STDERR "$0 $$ Do_file files ", $f->{File_Name}, " ", $f->{MD5}, "\n";
+
+    $size = -s $f->{Tmp_File_Name};
+    $r_file = DBExec("select * from file where fcrc = '$f->{MD5}' and fsize = '$size' and ftype = '$files_content[$i]'");
+    if ($r_file->NumRows() != 0) {
+      $num = $r_file->Value("sysnum");
+    } else {
+      $num = DBProtInsert("file", {fcrc => $f->{MD5}, fsize => $size, ftype => $files_content[$i] });
+      link($f->{Tmp_File_Name}, $main::PROGRAM_FILES . "/" . $num);
+    }
+
+    PutFile($FS, $f->{File_Name}, $num, $OWNER);
+  }
+  print STDERR "$0 $$ Do_file compleet\n";
+  #print "Complete\n";
+}
+
+#--------------------------------
+
+sub CheckLink(\%$$)
+{
+    my($R_FS, $FS, $USERNAME) = @_;
+    my($r_fs, $r_acc);
+
+    $AccessList = "sysnumfs = " . $R_FS->Value("sysnum");
+    $UpLink = "";
+    $FullPath = $R_FS->Value("name");
+    $r_fs = DBExec("select fs.sysnum, fs.name, fs.up from fs where fs.sysnum = " . $R_FS->Value("up"));
+    while (!$r_fs->Eof()) {
+       $AccessList .= " or sysnumfs = " . $r_fs->Value("sysnum");
+       $UpLink = ($r_fs->Value("sysnum") != $FS ? ($r_fs->Value("sysnum") . ":") : "") . $UpLink;
+       $FullPath = $r_fs->Value("name") . "/" . $FullPath;
+       $r_fs = DBExec("select fs.sysnum, fs.name, fs.up from fs while fs.sysnum = " . $r_fs->Value("up"));
+    }
+
+    $r_acc = DBExec("select * from acc where username = '$USERNAME' and ($AccessList) and (access = 'u' or access = 'w') and (expdate >= 'now'::abstime or expdate = NULL)");
+    if ($r_acc->NumRows() == 0) {
+      return 0;
+    }
+
+  return 1;
+}
+
+#-------------------------------
+
+sub PutFile($$$$)
+{
+  my($FS, $Name, $Num, $Owner) = @_;
+  my($dir, $name) = ($Name =~ /^(.*)\/([^\/]*)$/) ? ($1, $2) : ("", $Name);
+  my(@arr) = split(/\//, $dir);
+  my($fs, $i);
+
+  $fs = $FS;
+  for ($i = 0; $i <= $#arr; $i++) {
+    $arr[$i] = GetPasteFileName($fs, $arr[$i], $Owner, 1);
+    $r_fs = DBExec("select * from fs where ftype = 'f' and name = '$arr[$i]' and up = '$fs' and owner = $Owner and sysnumfile = 0");
+    if ($r_fs->NumRows() != 0) {
+      $fs = $r_fs->Value("sysnum");
+    } else {
+      $fs = DBProtInsert("fs", { up => $fs, name => $arr[$i], owner => $Owner, sysnumfile => 0, ftype => f, creat => DATETIME });
+    }
+  }
+
+  $name = GetPasteFileName($fs, $name, $Owner, 0);
+  $fs = DBProtInsert("fs", { up => $fs, name => $name, owner => $Owner, sysnumfile => $Num, ftype => f, creat => DATETIME });
+}
+
+#------------------------------
+
+sub GetPasteFileName($$$$)
+{
+   my($FS, $name_org, $owner, $DirAppr) = @_;
+   my($templ) = "Upload(( \([0-9]+\))*) of (.+)";
+
+   my($i) = 0;
+   my($name) = $name_org;
+
+   if ($name =~ $templ) {
+            $name = $3;
+   }
+
+   $r_fs = DBExec("select * from fs where ftype = 'f' and name = '$name' and up = $FS and owner=$owner");
+   while ($r_fs->NumRows() != 0 && !(DirAppr && $r_fs->Value("sysnumfile") == 0)) {
+     $i++;
+     $name = $name_org;
+
+     if ($name =~ $templ) {
+              $name = $3;
+     }
+
+     $name = "Upload " . ($i == 1 ? "" : "($i) ") . "of $name";
+     $r_fs = DBExec("select * from fs where ftype = 'f' and name = '$name' and up = $FS and owner=$owner");
+   }
+
+   return $name;
+}
+
+
+#############################################################################
+
+
+sub Debug($)
+{
+  open DEBUG, ">../debug";
+  print DEBUG @_[0], "\n";
+  close DEBUG;
+}
+
+
+sub ReadFile($)
+{
+  my($buf);
+
+  #print STDERR "$0 $$ read file $_[0]\n";
+  local *file;
+
+  open file, $_[0];
+
+  if (!file) {
+    print STDERR "$0 $$ Error open file $_[0], error: $!\n";
+    return "";
+  }
+
+
+  $buf = join("", <file>);
+  close file;
+
+  return $buf;
+}
+
+#############################################################################
+
+$IntrHandle = sub {
+                        print STDERR "$0 $$ Interrupted " . $_[0] . "\n";
+                        exit 1;
+                  };
+$SIG{'INT'}  = $IntrHandle;
+$SIG{'QUIT'} = $IntrHandle;
+$SIG{'KILL'} = $IntrHandle;
+$SIG{'TERM'} = $IntrHandle;
+$SIG{'HUP'}  = $IntrHandle;
+
+$SIG{'HUP'}  = $IntrHandle;
+$SIG{'INT'}  = $IntrHandle;
+$SIG{'QUIT'}  = $IntrHandle;
+$SIG{'ILL'}  = $IntrHandle;
+$SIG{'TRAP'}  = $IntrHandle;
+$SIG{'KILL'}  = $IntrHandle;
+$SIG{'PIPE'}  = $IntrHandle;
+$SIG{'CONT'}  = $IntrHandle;
+$SIG{'TTOU'}  = $IntrHandle;
+$SIG{'VTALRM'}  = $IntrHandle;
+$SIG{'PWR'}  = $IntrHandle;
+$SIG{'ABRT'}  = $IntrHandle;
+$SIG{'USR1'}  = $IntrHandle;
+$SIG{'ALRM'}  = $IntrHandle;
+$SIG{'STOP'}  = $IntrHandle;
+$SIG{'URG'}  = $IntrHandle;
+$SIG{'PROF'}  = $IntrHandle;
+$SIG{'SYS'}  = $IntrHandle;
+$SIG{'FPE'}  = $IntrHandle;
+$SIG{'USR2'}  = $IntrHandle;
+#$SIG{'CHLD'}  = $IntrHandle;
+$SIG{'TTIN'}  = $IntrHandle;
+$SIG{'XFSZ'}  = $IntrHandle;
+$SIG{'IO'}  = $IntrHandle;
+$SIG{'BUS'}  = $IntrHandle;
+$SIG{'SEGV'}  = $IntrHandle;
+$SIG{'TERM'}  = $IntrHandle;
+$SIG{'TSTP'}  = $IntrHandle;
+$SIG{'XCPU'}  = $IntrHandle;
+$SIG{'WINCH'}  = $IntrHandle;
+$SIG{'RTMIN'}  = $IntrHandle;
+
+
+
+select(STDIN); $| = 1; select(STDOUT);
+main();
+print STDERR "$0 $$ upld compleet\n";
+
+
+
+
+

@@ -1,0 +1,79 @@
+title = Pasta FTP
+home_title = FTP / Meus Arquivos
+home_name = My_Files
+step_to = Avancar
+help_string = Ajuda : Para enviar Permissao aos usuarios Siga <b><i>Vermelho</i></b> numeros.
+select_all_ico = Selecionar todos os arquivos
+remark_ico = Remarcar
+step_up_ico = Voltar
+open_folder_ico = Abrir Pasta
+view_file_ico = Ver arquivo
+
+bt_paste_ico = Colar arquivos do quadro de edicao (clipboard)
+bt_cut_ico = cortar arquivos selecionados do quadro de edicao
+bt_copy_ico = copiar arquivos selecionados do quadro de edicao
+bt_delete_ico = deletar arquivos selecionados
+
+cnt_files = arquivo(s)
+cnt_size = Tamanho
+
+lb_file_name = Nome do arquivo
+lb_date = Data
+lb_size = Tamanho
+lb_owner = Rementente
+lb_num_1 = Selecionar arquivos e pastas.
+lb_num_2 = Selecionar enderecos da lista abaixo
+lb_num_3 = Selecionar Permissao e Data de expiracao
+lb_num_4 = Enviar Permissao
+lb_remark_file = Remarcar Arquivo
+lb_remark_folder = Remarcar Pasta
+
+next_num_ico = Proxima Etapa
+
+perm_r = Abaixar Arquivos somente
+perm_w = Abaixar/Carregar
+perm_u = carregar Arqivos somente
+perm_n = Proibir Acesso
+lb_exp_date = Data Expirada:
+eper_0 = None
+eper_1 = 1 Dia
+eper_2 = 2 Dia
+eper_7 = 1 Semana
+eper_14 = 2 Semana
+eper_31 = 1 Mes
+eper_62 = 2 Mes
+eper_365 = Ano
+lb_date_form = Format: mm/dd/aaaa
+lb_add_mes = Adicionar Mensagem
+
+
+conf_lb_titl1 = Rever Suas Permissoes
+conf_lb_titl2 = Voce esta mandado Permissoes de acesso a seguinte lista de usuarios
+conf_lb_titl3 = Rever a lista Cuidadosamente e desmarcar usuarios, na lista, a qual nao devem receber permissoes!
+
+
+cp_lb_name  = Nome
+cp_lb_file  = Arquivo
+cp_lb_acc   = Acesso
+cp_lb_edate = Data de Expiracao
+cp_lb_abbrev = Abreviacao
+cp_lb_perm_r = <b>ro</b> - Ler somente
+cp_lb_perm_w = <b>r/w</b> - Ler/Escrever
+cp_lb_perm_u = <b>wo</b> - Escrever somente
+cp_lb_perm_n = <b>n/v</b> - Oculto
+cp_lb_perm_e = <b>er</b> - Apagar permissao
+
+err_mes1 = Nome ja em uso
+err_mes2 = Carregar arquivo fracassado
+err_mes3 = Abaixar arquivo Fracassado
+err_mes4 = Pasta nao esta vazia
+err_mes5 = Deletar arquivos Read Only
+err_mes6 = Cortar arquivos Read Only
+err_mes7 = Operacao nao aplicada com pastas
+err_mes8 = Operacao nao aplicada com mais de um arquivo
+err_mes9 = Arquivo ou pasta invalida
+err_mes10 = Data de expiracao invalida
+err_mes11 = Arquivo nao selecionado
+err_mes12 = Endereco nao selecionado
+err_mes13 = Niveis de permissao nao selecionadas
+err_mes14 = E possivel mandar link "Download only" somente a 1 pasta

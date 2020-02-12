@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+find . -maxdepth 1 -not -type d -and -not -type l -exec chmod 664 {} \;
+
+chmod +x shm_clear.php
+chmod +x shm_show.php
+
+ln -sf ../afik1.cf ./afik1.cf.php
+
+ln -sf db_pg.inc.php ./db_depn.inc.php
+ln -sf upld.php ./upld_proba.php
+ln -sf ra.php ./ra.php3
+ln -sf login.php ./index.php
+ln -sf login.php ./index.php3
+ln -sf ../img ./img
+ln -sf ../help ./help

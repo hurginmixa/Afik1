@@ -1,0 +1,5 @@
+title = Upload File(s)
+step1 = Selekteer File(s)
+step2 = Sturen Naar Web Site
+file = File Nr.
+err_subscript = Afik1 Systeem Files Upload Server

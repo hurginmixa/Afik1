@@ -1,0 +1,15 @@
+#!/bin/bash
+
+find . -maxdepth 1 -not -type d -and -not -type l -exec chmod 664 {} \;
+
+ln -sf ../error_access.php index.php
+
+chmod +x *.pl
+chmod -x *.pm
+
+ln -sf ../afik1.cf ./
+ln -sf ../ftp/db* ./
+ln -sf ../ftp/readconf.pm ./
+ln -sf ../ftp/utils.pm ./
+ln -sf ../ftp/tools.pm ./
+ln -sf ../ftp/sendmail.pm ./

@@ -1,0 +1,16 @@
+title = <b>OPTIES</b>
+acc_info = <b>REKENING INFORMATIE VOOR:</b>
+password = Paswoord
+repassword = Herhaal Paswoord
+passw_mes = Minimum zes (6) karakters, mag nummers bevatten (0-9), maar geen spaties.
+firstname = Voornaam
+lastname = Achternaam
+name_mes = Uw volledige naam wordt verstuurd met alle uitgaande berichten.
+email = E-mail
+frwmail = Vooruit Sturen Post
+address = Adres
+country = Land
+phone = Telefoon
+mphone = Mobiele Telefoon
+fax = Fax
+nicq = ICQ

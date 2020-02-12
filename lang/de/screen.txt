@@ -1,0 +1,17 @@
+sc_welcome = Haupt Menu
+sc_welcome_ico = Haupt Menu
+sc_inbox = Inbox
+#blalbla = bla
+#---------new--------
+sc_inbox_ico = Incoming Mail
+sc_compose = New Message
+sc_compose_ico = Compose New Message
+sc_address = Address Book
+sc_address_ico = Your Personal Address Book
+sc_ftp_myfile = FTP / My File
+sc_ftp_myfile_ico = Your Uploaded Files
+sc_ftp_frfile = FTP / Friend's Files
+sc_ftp_frfile_ico = Access Friend's Uploaded Files
+sc_logout = Logout
+sc_logout_ico = Quit
+sc_username = User Name

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ln -sf ../../error_access.php index.php
+
+chmod -f -x *.c
+chmod -f -x *.cc
+chmod -f -x *.h
+chmod -f -x Makefile
+chmod -f -x *.data
+chmod -f -x *.awk

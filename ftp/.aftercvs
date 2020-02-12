@@ -1,0 +1,7 @@
+#!/bin/bash
+
+chmod 775 *.pl
+chmod 664 *.pm
+chmod 775 *.sh
+
+ln -sf ../afik1.cf ./

@@ -1,0 +1,163 @@
+TERMS AND CONDITIONS OF SERVICE :
+
+1. ACCEPTANCE OF TERMS
+        Thank you for choosing AFIK1 SYSTEM of WAN Vision Ltd. WAN Vision provides its
+        AFIK1 SYSTEM, Virtual Domains And Storage Hosting (the "SERVICE") to you,
+        subject to the following Terms and Conditions of Service ("TERMS").
+
+
+2. MODIFICATION OF THESE TERMS OF USE
+        WAN Vision reserves the right to change the terms, conditions, and notices
+        under which the Service is offered, including but not limited to the charges
+        associated with the use of the Service with a prior notice of 60 days.
+
+
+3. THE SERVICES
+        WAN Vision provides private & commercial users with access to various
+        resources, including, the Service. Any new features that augment or enhance
+        the current Service, including the release of new WAN Vision products or
+        services, shall be subject to the TERMS. The Service is provided "AS-IS". WAN
+        Vision reserves the right to modify or discontinue temporarily the Service
+        with or without notice or liability.
+
+
+4. USER OBLIGATIONS
+        You agree to submit full and complete information about yourself as requested
+        in the Service's registration form ("Registration Data") and to keep it true
+        and accurate. If any of the information you provide is not true or accurate,
+        or WAN Vision or Actcom has reasonable grounds to suspect that such
+        information is untrue, or not accurate, WAN Vision has the right to suspend or
+        terminate your account and refuse any and all current or future use of the
+        Service (or any portion thereof).
+
+
+5. MEMBER ACCOUNT
+        Once you have filled out the Registration Data, you will obtain a password and
+        a user name. You have the sole responsibility for maintaining the
+        confidentiality of your password and account and for any and all activities
+        that occur under your account. You agree to notify WAN Vision immediately of
+        any unauthorized use of your account or any other breach of security.
+
+
+6. WAN Vision PRIVACY POLICY
+        Registration Data and certain other information about you are subject to our
+        Privacy Policy. For more information, see our full privacy policy.
+
+7. USER CONDUCT
+        You understand that all information, data, text, software, music, sound,
+        photographs, graphics, video, messages or other materials ("Content"), are the
+        sole responsibility of the person from which such Content originated. WAN
+        Vision does not control the Content posted via the Service and, as such, does
+        not guarantee the accuracy, integrity or quality of such Content.
+
+8. MANAGING CONTENT
+        WAN Vision does not review the Content posted by users on the Service. WAN
+        Vision reserves the right to delete, move or edit any Content that it may
+        determine, in its sole discretion, violates this Agreement or is otherwise
+        unacceptable and to preserve and/or disclose Content if required to do so by
+        law or in the good faith belief that such preservation or disclosure is
+        reasonably necessary to:
+
+                1. comply with legal process;
+                2. enforce the TERMS;
+                3. respond to claims that any Content violates the rights of
+                   third-parties.
+
+9. INTERNATIONAL USE
+        Recognizing the global nature of the Internet, you agree to comply
+        with all local rules regarding online conduct and acceptable Content.
+
+10. INDEMNITY
+        You agree to indemnify, defend and hold WAN Vision & its officers, agents,
+        other partners, and employees, harmless from any and all claims, liability,
+        losses costs, expenses or demands, including reasonable attorneys' fees, made
+        by any third party due to or arising out of use or alleged use of the Services
+        under your password by any person, whether or not authorized by you or for any
+        Content you submit, post, transmit or make available through the Service, your
+        violation of the TERMS, or your violation of any rights of another.
+
+11. GENERAL PRACTICES REGARDING USE AND STORAGE
+        You acknowledge that WAN Vision may establish general practices and limits
+        concerning use of the Service (according to your contract) and and that WAN
+        Vision shall have no obligation to maintain any Content or to forward any
+        unread or unsent messages to you or any third party after logging off an
+        account. You agree that WAN Vision has no responsibility or liability for the
+        deletion, corruption or failure to store any Content maintained or transmitted
+        by the Service. WAN Vision makes no warranty that any service will be
+        uninterrupted, timely, secure or error-free.
+
+12. WAN Vision’S PROPRIETARY RIGHTS
+        You acknowledge and agree that the Service contains proprietary and
+        confidential information that is protected by applicable intellectual property
+        and other laws. WAN Vision grants you a non-transferable and non-exclusive
+        right and license to use the object code of its Software, provided that you do
+        not (and do not allow any third party to) copy, modify, rent, lease, loan,
+        sell, distribute or create a derivative work of, reverse engineer, reverse
+        assemble or otherwise attempt to discover any source code, sell, assign,
+        sublicense, grant a security interest in or otherwise transfer any right in
+        the Software in whole or in part.
+
+13. DISCLAIMER OF WARRANTIES
+        YOU EXPRESSLY UNDERSTAND AND AGREE THAT: Your use of the service is at your
+        sole risk. The service is provided on an "as is" and "as available" basis. WAN
+        Vision expressly disclaims all warranties of any kind, whether express or
+        implied, including, but not limited to the implied warranties of
+        merchantability, fitness for a particular purpose and non-infringement; WAN
+        Vision makes no warranty that :
+
+                1. the service will meet your requirements,
+                2. the service will be uninterrupted, timely, secure, or
+                   error-free,
+                3. the results that may be obtained from the use of the service
+                   will be accurate or reliable,
+                4. the quality of any products, services, information, or other
+                   material purchased or obtained by you through the service
+                   will meet your expectations,
+                5. any errors in the software will be corrected.
+
+        Any material downloaded or otherwise obtained through the use of the
+        service is done at your own discretion and risk and that you will be solely
+        responsible for any damage to your computer system or loss of data that
+        results from the download of any such material; No advice or information,
+        whether oral or written, obtained by you from WAN Vision or through or from
+        the service shall create any warranty not expressly stated in the TERMS.
+
+14. LIMITATION OF LIABILITY
+        You expressly understand and agree that WAN Vision shall not be liable for any
+        direct, indirect, incidental, special, consequential or exemplary damages,
+        including but not limited to, damages for loss of profits, goodwill, use, data
+        or other intangible losses (even if WAN Vision has been advised of the
+        possibility of such damages), resulting from: (i) the use or the inability to
+        use the Service; (ii) the cost of procurement of substitute goods and services
+        resulting from any data, information or services purchased or obtained or
+        messages received or transactions entered into through or from the Service;
+        (iii) unauthorized access to or alteration of your transmissions or data; (iv)
+        statements or conduct of any third party on the Service; or (v) any other
+        matter relating to the Service.
+
+15. EXCLUSIONS AND LIMITATIONS
+        Some jurisdictions do not allow the exclusion of certain warranties or the
+        limitation or exclusion of liability for incidental or consequential damages.
+        Accordingly, some of the above limitations of sections 13 and 14 may not apply
+        to you.
+
+16. GENERAL INFORMATION
+        The TERMS constitute the entire agreement between you, WAN Vision and govern
+        your use of the Service, superceding any prior agreements between you & WAN
+        Vision. The TERMS and the relationship between you and WAN Vision shall be
+        governed by the laws of the State of Israel without regard to its conflict of
+        law provisions. You & WAN Vision agree to submit to the personal and exclusive
+        jurisdiction of the courts located within the country of Israel. The failure
+        of WAN Vision to exercise or enforce any right or provision of the TERMS shall
+        not constitute a waiver of such right or provision. If any provision of the
+        TERMS is found by a court of competent jurisdiction to be invalid, the parties
+        nevertheless agree that the court should endeavor to give effect to the
+        parties' intentions as reflected in the provision, and the other provisions of
+        the TERMS remain in full force and effect. You agree that regardless of any
+        statute or law to the contrary, any claim or cause of action arising out of or
+        related to use of the Service or the TERMS must be filed within one (1) year
+        after such claim or cause of action arose or be forever barred. The section
+        titles in the TERMS are for convenience only and have no legal or contractual
+        effect. Sections 10, 13, 14, 15 and 16 shall survive any termination of this
+        Agreement.
+

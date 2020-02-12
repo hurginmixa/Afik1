@@ -1,0 +1,28 @@
+title = Дружеский FTP Папка
+home_title = FTP / Файлы друзей
+home_name = Friends_FTP
+step_to = Перейти к
+select_all_ico = Выделить все файлы
+remark_ico = Коментарий
+step_up_ico = Шаг вверх
+open_folder_ico = Открыть папку
+view_file_ico = Просмотр файла
+
+bt_dwnl_zip_ico = Сгрузить помеченые файлы как ZIP-файл
+bt_upld_brw_ico = Загрузить файлы через Web browser
+bt_run_ftp_ico = Запустить клиент Ftp
+bt_paste_ico = Вставить файлы из буффера обмена
+bt_cut_ico = Вырезать помеченные файлы в буффер обмена
+bt_copy_ico = Копировать помеченные файлы в буффер обмена
+bt_delete_ico = Удалить помеченые файлы
+bt_cancel_ico = Выход
+
+cnt_files = файл(ы)
+cnt_size = размер
+
+lb_file_name = Имя файла
+lb_date = Дата и время
+lb_size = Размер
+lb_owner = Владелец
+lb_remark_file = Коментарий к файлу
+lb_remark_folder = Коментарий к папке 
